@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hang Man App</title>
+    <script src="main.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <h2>Guess Count:{{ #options }}{{ . }} {{ /options }} </h2>
+
+    <p></p>
+
+    <div id="word">
+    {{ #blankspace }}
+
+     <p> {{ . }} </p>
+
+      {{ /blankspace }}
+
+    </div>
+    <form method="post" action="/hello">
+    <input type="text" name="letterGuess" id="letterGuess" placeholder="Guess  a letter">
+    <input type="submit" value="Guess!" id="submit">
+   </form>
+   <div id="letters">
+<h1>{{ errors }}</h1>
+     <h3> Letters Guessed: {{ #letterGuessed }} {{ . }}, {{ /letterGuessed }}</h3>
+
+     <p id="lettersguess"> </p>
+
+   </div>
+   {{ #random }}
+   <p> {{ . }} </p>
+   {{ /random }}
+  </body>
+</html>
